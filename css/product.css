@@ -512,7 +512,6 @@ footer {
 
 .footer-links a:hover {
   color: var(--color-accent);
-  transform: translateX(5px);
   transition: all var(--transition-fast);
 }
 
