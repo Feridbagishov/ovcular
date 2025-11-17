@@ -8,7 +8,7 @@
 
 body {
   font-family: var(--font-family-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   position: relative;
   z-index: var(--z-index-header);
   box-shadow: var(--shadow-md);
@@ -55,7 +55,7 @@ nav {
 
 .header_li li a {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
   padding: var(--spacing-sm) var(--spacing-md);
@@ -329,7 +329,7 @@ body.no-scroll {
 }
 
 .main_content h1 {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-size: var(--font-size-3xl);
   background-color: var(--color-overlay-light);
   padding: var(--spacing-lg) var(--spacing-3xl);
@@ -374,7 +374,6 @@ body.no-scroll {
 }
 
 .productBox:hover {
-  transform: translateY(-5px);
   box-shadow: var(--shadow-xl);
 }
 
@@ -394,7 +393,7 @@ body.no-scroll {
 .productBox p {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   z-index: 2;
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -432,7 +431,7 @@ footer {
 
 .footer-links h3 {
   font-size: var(--font-size-lg);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-lg);
   position: relative;
   display: inline-block;
@@ -474,7 +473,7 @@ footer {
 
 .store-info h4 {
   font-size: var(--font-size-md);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
   position: relative;
   display: inline-block;
@@ -659,6 +658,7 @@ footer {
   .mobile-nav-links li a {
     font-size: var(--font-size-md);
     padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-primary);
   }
   
   .mobile-language-selector {

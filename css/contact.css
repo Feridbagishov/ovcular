@@ -9,7 +9,7 @@
 
 body {
   font-family: var(--font-family-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   overflow-x: hidden;
 }
 
@@ -20,7 +20,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   position: relative;
   z-index: var(--z-index-header);
   box-shadow: var(--shadow-md);
@@ -55,7 +55,7 @@ nav {
 
 .header_li li a {
   text-decoration: none;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
   padding: var(--spacing-sm) var(--spacing-md);
@@ -336,7 +336,7 @@ body.no-scroll {
 }
 
 .main_content h1 {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-size: var(--font-size-3xl);
   background-color: var(--color-overlay-light);
   padding: var(--spacing-lg) var(--spacing-3xl);
@@ -407,19 +407,19 @@ body.no-scroll {
 
 .branch-info h3 {
   font-size: var(--font-size-lg);
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: var(--spacing-md);
 }
 
 .branch-info p {
   font-size: var(--font-size-sm);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
 .branch-info span {
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 /* Branch details styles */
@@ -443,11 +443,12 @@ body.no-scroll {
 }
 
 .branch-social-link {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
@@ -455,7 +456,6 @@ body.no-scroll {
 }
 
 .branch-social-link:hover {
-  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   color: var(--color-accent);
 }
@@ -511,7 +511,7 @@ footer {
 
 .footer-links h3 {
   font-size: var(--font-size-lg);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-lg);
   position: relative;
   display: inline-block;
@@ -547,13 +547,12 @@ footer {
 
 .footer-links a:hover {
   color: var(--color-accent);
-  transform: translateX(5px);
   transition: all var(--transition-fast);
 }
 
 .store-info h4 {
   font-size: var(--font-size-md);
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
   position: relative;
   display: inline-block;
@@ -815,6 +814,7 @@ footer {
   .mobile-nav-links li a {
     font-size: var(--font-size-md);
     padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-primary);
   }
   
   .mobile-language-selector {
