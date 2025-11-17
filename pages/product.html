@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ovçu Dünyası - Kataloq</title>
+  <link rel="stylesheet" href="../css/root.css">
+  <link rel="stylesheet" href="../css/product.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <img src="../img/ovcu_logo.jpg" alt="Ovçu Dünyası Logo" class="logo">
+      <ul class="header_li">
+        <li><a href="../pages/index.html" data-translate="home">Əsas</a></li>
+        <li><a href="../pages/about.html" data-translate="about">Haqqımızda</a></li>
+        <li><a href="../pages/product.html" class="active" data-translate="catalog">Kataloq</a></li>
+        <li><a href="../pages/contact.html" data-translate="contact">Əlaqə</a></li>
+      </ul>
+      
+      <div class="language-selector">
+        <img src="../img/britishflag.png" alt="English" class="language-flag" data-lang="en">
+        <img src="../img/Russian-Flag-600x375.jpg" alt="Русский" class="language-flag" data-lang="ru">
+        <img src="../img/Flag_of_Azerbaijan_1918.svg.png" alt="Azərbaycanca" class="language-flag" data-lang="az">
+      </div>
+      
+      <div class="burger-menu">
+        <div class="burger-line line1"></div>
+        <div class="burger-line line2"></div>
+        <div class="burger-line line3"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <!-- Navigation links will be inserted here by JavaScript -->
+  </div>
+
+  <!-- MAIN CATALOG CONTENT -->
+  <main class="catalog-main">
+    <h1 class="catalog-title" data-translate="product_catalog">Məhsul Kataloqu</h1>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+      <span class="breadcrumb-item active" data-category="all">Kataloq</span>
+    </div>
+    
+    <!-- Main Categories -->
+    <div class="catalog-grid" id="mainCategories">
+      <!-- Silahlar Kateqoriyası -->
+      <div class="catalog-item" data-category="guns">
+        <img src="../img/shotgunpngmain.png" alt="Silahlar" class="catalog-img">
+        <p class="catalog-name" data-translate="guns">Silahlar</p>
+      </div>
+      
+      <!-- Pnevmatik Silahlar Kateqoriyası -->
+      <div class="catalog-item" data-category="psp">
+        <img src="../img/pcpmainphoto.gif" alt="Pnevmatik Silahlar" class="catalog-img">
+        <p class="catalog-name" data-translate="pneumatic_guns">Pnevmatik Silahlar</p>
+      </div>
+      
+      <!-- Airsoft Kateqoriyası -->
+      <div class="catalog-item" data-category="airsoft">
+        <img src="../img/airsoftmainlogo.jpg" alt="Airsoft" class="catalog-img">
+        <p class="catalog-name" data-translate="airsoft">Airsoft</p>
+      </div>
+    </div>
+
+    <!-- Guns Brands -->
+    <div class="catalog-grid hidden" id="gunsBrands">
+      <div class="catalog-item" data-brand="benelli">
+        <img src="../img/benelli_logo.png" alt="Benelli" class="catalog-img">
+        <p class="catalog-name">Benelli</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="beretta">
+        <img src="../img/beretta_logo.png" alt="Beretta" class="catalog-img">
+        <p class="catalog-name">Beretta</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="cesar_guerini">
+        <img src="../img/Logo Caesar Guerini_0.png" alt="Cesar Guerini" class="catalog-img">
+        <p class="catalog-name">Cesar Guerini</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="ata_arms">
+        <img src="../img/ataarms_logo.jpg" alt="ATA Arms" class="catalog-img">
+        <p class="catalog-name">ATA Arms</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="kral">
+        <img src="../img/kral_logo.jpg" alt="Kral" class="catalog-img">
+        <p class="catalog-name">Kral</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="browning">
+        <img src="../img/Browning_Logo.png" alt="Browning" class="catalog-img">
+        <p class="catalog-name">Browning</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="franchi">
+        <img src="../img/Franchi_logo.png" alt="Franchi" class="catalog-img">
+        <p class="catalog-name">Franchi</p>
+      </div>
+      
+      <div class="catalog-item" data-brand="stoeger">
+        <img src="../img/stoeger_logo.png" alt="Stoeger" class="catalog-img">
+        <p class="catalog-name">Stoeger</p>
+      </div>
+    </div>
+
+    <!-- PSP Products - Birbaşa modellər -->
+    <div class="catalog-grid hidden" id="pspProducts">
+      <div class="catalog-item" data-product="kral_n01">
+        <img src="../img/kraln01.png" alt="Kral N01" class="catalog-img">
+        <p class="catalog-name">Kral N01</p>
+      </div>
+      
+      <div class="catalog-item" data-product="kral_n02">
+        <img src="../img/n02.png" alt="Kral N02" class="catalog-img">
+        <p class="catalog-name">Kral N02</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_n03">
+        <img src="../img/n03.png" alt="Kral N03" class="catalog-img">
+        <p class="catalog-name">Kral N03</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_n04">
+        <img src="../img/n04_kral.png" alt="Kral N04" class="catalog-img">
+        <p class="catalog-name">Kral N04</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_n05">
+        <img src="../img/n05.png" alt="Kral N05" class="catalog-img">
+        <p class="catalog-name">Kral N05</p>
+      </div>
+
+
+       <div class="catalog-item" data-product="kral_n06">
+        <img src="../img/n06.png" alt="Kral N06" class="catalog-img">
+        <p class="catalog-name">Kral N06</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_n07_wood">
+        <img src="../img/n07wood.png" alt="Kral N07 wood" class="catalog-img">
+        <p class="catalog-name">Kral N07 Wood</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_n07">
+        <img src="../img/n07.png" alt="Kral N07" class="catalog-img">
+        <p class="catalog-name">Kral N07</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_n11">
+        <img src="../img/n11_kral.png" alt="Kral N11" class="catalog-img">
+        <p class="catalog-name">Kral N11</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_n13">
+        <img src="../img/n13_kral.png" alt="Kral N13" class="catalog-img">
+        <p class="catalog-name">Kral N13</p>
+      </div>
+
+       <div class="catalog-item" data-product="stoeger_rx_20">
+        <img src="../img/rx20.jpg" alt="rx20" class="catalog-img">
+        <p class="catalog-name">Stoeger RX20</p>
+      </div>
+
+      <div class="catalog-item" data-product="stoeger_rx_20_tac">
+        <img src="../img/rx20_tac.jpg" alt="rx20tac" class="catalog-img">
+        <p class="catalog-name">Stoeger RX20 Tac</p>
+      </div>
+
+      <div class="catalog-item" data-product="stoeger_rx_40">
+        <img src="../img/rx40.jpg" alt="rx40" class="catalog-img">
+        <p class="catalog-name">Stoeger RX40</p>
+      </div>
+
+      <div class="catalog-item" data-product="stoeger_XM1">
+        <img src="../img/xm1.jpg" alt="XM1" class="catalog-img">
+        <p class="catalog-name">Stoeger XM1</p>
+      </div>
+
+      <div class="catalog-item" data-product="bm8">
+        <img src="../img/bm_8.jpg" alt="bm8" class="catalog-img">
+        <p class="catalog-name">Black Bunker BM8</p>
+      </div>
+
+       <div class="catalog-item" data-product="Empire_x">
+        <img src="../img/empire x puncher pcp.png" alt="Empire x" class="catalog-img">
+        <p class="catalog-name">Empire X Puncher PCP</p>
+      </div>
+
+       <div class="catalog-item" data-product="super_jumbo">
+        <img src="../img/super jumbp.png" alt="Super_jumbo" class="catalog-img">
+        <p class="catalog-name">Super Jumbo</p>
+      </div>
+
+      <div class="catalog-item" data-product="empire_xs">
+        <img src="../img/empire_xs.png" alt="Empire XS" class="catalog-img">
+        <p class="catalog-name">Empire XS</p>
+      </div>
+
+      <div class="catalog-item" data-product="shadow">
+        <img src="../img/shadow.png" alt="Shadow" class="catalog-img">
+        <p class="catalog-name">Shadow</p>
+      </div>
+
+      <div class="catalog-item" data-product="empire">
+        <img src="../img/empire_.png" alt="Empire" class="catalog-img">
+        <p class="catalog-name">Empire</p>
+      </div>
+
+      <div class="catalog-item" data-product="np500">
+        <img src="../img/np500_pcp.png" alt="NP 500" class="catalog-img">
+        <p class="catalog-name">NP 500</p>
+      </div>
+
+      <div class="catalog-item" data-product="puncher_auto">
+        <img src="../img/puncherauto.png" alt="Puncher Auto" class="catalog-img">
+        <p class="catalog-name">Puncher Auto</p>
+      </div>
+
+      <div class="catalog-item" data-product="ekinoks">
+        <img src="../img/ekinoks_pcp.png" alt="Ekinox" class="catalog-img">
+        <p class="catalog-name">Ekinox</p>
+      </div>
+
+      <div class="catalog-item" data-product="super_duty">
+        <img src="../img/superduty_pcp.png" alt="Super Duty" class="catalog-img">
+        <p class="catalog-name">Super Duty</p>
+      </div>
+
+       <div class="catalog-item" data-product="aselkon_mx7">
+        <img src="../images_ct/MX7-Ahsap-980x248.png" alt="Aselkon MX7" class="catalog-img">
+        <p class="catalog-name">Aselkon MX7</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/monarch_pcp.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Monarch</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/throne_gen2.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">throne gen2</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/reximex_meta+.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">reximex meta plus</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/ZONE-SITE-icin-300x108.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Zone</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/accura-std-300x108.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">accura</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/tormentaaa.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Tormenta</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/rp-std-300x108.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Rp</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/impact.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Impact</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/Pantehra_500.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Panthera</p>
+      </div>
+
+      <div class="catalog-item" data-product="aselkon_mx10">
+        <img src="../img/Maverick_Sniper-1-1536x512.png" alt="Aselkon MX10" class="catalog-img">
+        <p class="catalog-name">Maveric</p>
+      </div>
+    </div>
+
+    <!-- Airsoft Brands -->
+    <div class="catalog-grid hidden" id="airsoftBrands">
+      <div class="catalog-item" data-brand="cyma">
+        <img src="../img/cyma logo.png" alt="CYMA" class="catalog-img">
+        <p class="catalog-name">CYMA</p>
+      </div>
+    </div>
+
+    <!-- Benelli Products -->
+    <div class="catalog-grid hidden" id="benelliProducts">
+      <div class="catalog-item" data-product="raffaello_ai_black">
+        <img src="../images_ct/raffaello-AI-black-28.png" alt="Benelli Rafaello AI Black" class="catalog-img">
+        <p class="catalog-name">Benelli Rafaello AI Black</p>
+      </div>
+      
+      <div class="catalog-item" data-product="raffaello_lord">
+        <img src="../images_ct/benelli-raffaello-lord-min.png" alt="Benelli Rafaello Lord" class="catalog-img">
+        <p class="catalog-name">Benelli Rafaello Lord</p>
+      </div>
+      
+      <div class="catalog-item" data-product="raffaello_power_bore">
+        <img src="../images_ct/benelli-raffaello-power-bore.png" alt="Benelli Rafaello Power Bore" class="catalog-img">
+        <p class="catalog-name">Benelli Rafaello Power Bore</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_limited_edition">
+        <img src="../img/limited_edition_benneli.png" alt="Benelli_limited_edition" class="catalog-img">
+        <p class="catalog-name">Benelli Limited Edition</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_vinchi_supersport">
+        <img src="../img/benelli_super_sport.png" alt="Benelli_vinchi_supersport" class="catalog-img">
+        <p class="catalog-name">Benelli Vinci SuperSport</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_ducadi_montefeltro">
+        <img src="../img/duca-di-montefeltro.png" alt="Benelli Duca Di Montefeltro" class="catalog-img">
+        <p class="catalog-name">Benelli Duca Di Montefeltro</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_M3">
+        <img src="../img/benelli-m3-slug.png" alt="Benelli M3" class="catalog-img">
+        <p class="catalog-name">Benelli M3</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_M4">
+        <img src="../img/benelli-m4.png" alt="Benelli M4" class="catalog-img">
+        <p class="catalog-name">Benelli M4</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_super_nova">
+        <img src="../img/benelli-supernova-comfortech.png" alt="Benelli_limited_edition" class="catalog-img">
+        <p class="catalog-name">Benelli Super Nova</p>
+      </div>
+
+      <div class="catalog-item" data-product="benelli_pasion">
+        <img src="../img/ruzhe_benelli_pasion_sl80_12kh76_760mm.jpeg" alt="Benelli Pasion Sl80" class="catalog-img">
+        <p class="catalog-name">Benelli Pasion Sl80</p>
+      </div>
+    </div>
+
+    <!-- Beretta Products -->
+    <div class="catalog-grid hidden" id="berettaProducts">
+      <div class="catalog-item" data-product="beretta_a400_xtremeplus">
+        <img src="../img/a40extrempl.jpeg" alt="Beretta A400 Xtreme plus" class="catalog-img">
+        <p class="catalog-name">Beretta A400 Xtreme Plus</p>
+      </div>
+
+      <div class="catalog-item" data-product="beretta_a400_xplor">
+        <img src="../img/a400 xplor action.jpg" alt="Beretta A400 Xplor" class="catalog-img">
+        <p class="catalog-name">Beretta A400 XPlor</p>
+      </div>
+      
+      <div class="catalog-item" data-product="beretta_696">
+        <img src="../img/beretta 696.jpeg" alt="Beretta 696" class="catalog-img">
+        <p class="catalog-name">Beretta 696</p>
+      </div>
+      
+      <div class="catalog-item" data-product="beretta_a350">
+        <img src="../img/a350 extrem.jpg" alt="Beretta A350 extreme" class="catalog-img">
+        <p class="catalog-name">Beretta A350 Extreme</p>
+      </div>
+
+      <div class="catalog-item" data-product="beretta_687">
+        <img src="../img/687 sp3.png" alt="Beretta 687 silver pigeon III" class="catalog-img">
+        <p class="catalog-name">Beretta 687 Silver Pigeon III</p>
+      </div>
+
+      <div class="catalog-item" data-product="beretta_a400_upland">
+        <img src="../img/beretta upland.jpg" alt="Beretta A400 Upland" class="catalog-img">
+        <p class="catalog-name">Beretta A400 Upland</p>
+      </div>
+
+      <div class="catalog-item" data-product="beretta_a400_xcel">
+        <img src="../img/A400  XCEL.jpg" alt="Beretta A400 XCEL" class="catalog-img">
+        <p class="catalog-name">Beretta A400 XCEL</p>
+      </div>
+    </div>
+
+    <!-- Cesar Guerini Products -->
+    <div class="catalog-grid hidden" id="cesar_gueriniProducts">
+      <div class="catalog-item" data-product="cesar_guerini_magnus">
+        <img src="../img/cesar_guerini_magnus.jpg" alt="Cesar Guerini Magnus" class="catalog-img">
+        <p class="catalog-name">Cesar Guerini Magnus</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cesar_guerini_summit">
+        <img src="../img/cesar_guerini_summit.jpg" alt="Cesar Guerini Summit" class="catalog-img">
+        <p class="catalog-name">Cesar Guerini Summit</p>
+      </div>
+    </div>
+
+    <!-- ATA Arms Products -->
+    <div class="catalog-grid hidden" id="ata_armsProducts">
+      <div class="catalog-item" data-product="ata_arms_neo">
+        <img src="../img/neo_walnut.jpg" alt="ATA Arms Neo" class="catalog-img">
+        <p class="catalog-name">ATA Arms Neo Walnut</p>
+      </div>
+      
+      <div class="catalog-item" data-product="ata_arms_camo">
+        <img src="../img/neo_camo.jpg" alt="ATA Arms Neo Camo" class="catalog-img">
+        <p class="catalog-name">ATA Arms Neo Camo</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_cy_camo">
+        <img src="../img/cy_camo.jpg" alt="ATA Arms CY CAMO" class="catalog-img">
+        <p class="catalog-name">ATA Arms CY Camo</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_neoX_camo">
+        <img src="../img/neo_X_camo.jpg" alt="ATA Arms Neo X Camo" class="catalog-img">
+        <p class="catalog-name">ATA Arms Neo X Camo</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_neoX_syntethic">
+        <img src="../img/neo_x_syntethic.jpg" alt="ATA Arms Neo X syntethic" class="catalog-img">
+        <p class="catalog-name">ATA Arms Neo X Syntethic</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_venza_camo">
+        <img src="../img/venza_camo.jpg" alt="ATA Arms Venza Camo" class="catalog-img">
+        <p class="catalog-name">ATA Arms Venza Camo</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_cy_modern3_gold">
+        <img src="../img/cy_modern3_gold.jpg" alt="CY modern 3 Gold" class="catalog-img">
+        <p class="catalog-name">ATA Arms CY Modern 3 Gold</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_neo_fonex">
+        <img src="../img/neo_fonex.jpg" alt="ATA Arms Neo Fonex" class="catalog-img">
+        <p class="catalog-name">ATA Arms Neo Fonex</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_neo_modern3_gold">
+        <img src="../img/neo_modern3golf.jpg" alt="ATA Arms Neo Modern 3 Gold" class="catalog-img">
+        <p class="catalog-name">ATA Arms Neo Modern III Gold</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_sp_walnut">
+        <img src="../img/sp_walnut.jpg" alt="ATA Arms SP Walnut" class="catalog-img">
+        <p class="catalog-name">ATA Arms SP Walnut</p>
+      </div>
+    
+      <div class="catalog-item" data-product="ata_arms_sp_deluxe">
+        <img src="../img/sp_deluxe.jpg" alt="ATA Arms SP Deluxe" class="catalog-img">
+        <p class="catalog-name">ATA Arms SP Deluxe</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_superior_2_gold">
+        <img src="../img/sp_superior II gold.jpg" alt="ATA Arms superior II gold" class="catalog-img">
+        <p class="catalog-name">ATA Arms Superior II gold</p>
+      </div>
+
+      <div class="catalog-item" data-product="ata_arms_sp_supersport">
+        <img src="../img/sp_supersport.jpg" alt="ATA Arms SP Supersport" class="catalog-img">
+        <p class="catalog-name">ATA Arms SP Supersport</p>
+      </div>
+
+    </div>
+
+    <!-- Kral Products -->
+    <div class="catalog-grid hidden" id="kralProducts">
+      <div class="catalog-item" data-product="kral_cara_cara_white">
+        <img src="../img/cara_cara white.png" alt="cara cara white" class="catalog-img">
+        <p class="catalog-name">Kral Arms cara-cara white</p>
+      </div>
+      
+      <div class="catalog-item" data-product="kral_arms_cara_cara_black">
+        <img src="../img/cara cara black.png" alt="Kral Arms cara cara black" class="catalog-img">
+        <p class="catalog-name">Kral Arms cara-cara black</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_tundra_white">
+        <img src="../img/tundra white.png" alt="Kral arms Tundra" class="catalog-img">
+        <p class="catalog-name">Kral Arms Tundra</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_st500">
+        <img src="../img/st500 elite.png" alt="Kral arms st500" class="catalog-img">
+        <p class="catalog-name">Kral Arms ST500</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_signature_1">
+        <img src="../img/signature 1.png" alt="Kral arms Signature I" class="catalog-img">
+        <p class="catalog-name">Kral Arms Signature I</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_signature_2">
+        <img src="../img/signature 2.png" alt="Kral arms Signature II" class="catalog-img">
+        <p class="catalog-name">Kral Arms Signature II</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_signature_3">
+        <img src="../img/signature 3.png" alt="Kral arms Signature III" class="catalog-img">
+        <p class="catalog-name">Kral Arms Signature III</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_raptor_syntethic">
+        <img src="../img/raptor sintetik.png" alt="Kral arms Raptor Syntethic" class="catalog-img">
+        <p class="catalog-name">Kral Arms Raptor Syntethic</p>
+      </div>
+
+      <div class="catalog-item" data-product="kral_arms_raptor_wood">
+        <img src="../img/raptor wood.png" alt="Kral arms Raptor wood" class="catalog-img">
+        <p class="catalog-name">Kral Arms Raptor Wood</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_arms_azteca_wood">
+        <img src="../img/azteca wood.png" alt="Kral arms Azteca wood" class="catalog-img">
+        <p class="catalog-name">Kral Arms Azarax</p>
+      </div>
+
+       <div class="catalog-item" data-product="kral_arms_azarax">
+        <img src="../img/azarax.png" alt="Kral arms azarax " class="catalog-img">
+        <p class="catalog-name">Kral Arms Raptor Wood</p>
+      </div>
+
+    </div>
+
+    <!-- Browning Products -->
+    <div class="catalog-grid hidden" id="browningProducts">
+      <div class="catalog-item" data-product="browning_citori">
+        <img src="../img/browning_citori.jpg" alt="Browning Citori" class="catalog-img">
+        <p class="catalog-name">Browning Citori</p>
+      </div>
+      
+      <div class="catalog-item" data-product="browning_maxus">
+        <img src="../img/browning_maxus.jpg" alt="Browning Maxus" class="catalog-img">
+        <p class="catalog-name">Browning Maxus</p>
+      </div>
+    </div>
+
+    <!-- Franchi Products -->
+    <div class="catalog-grid hidden" id="franchiProducts">
+      <div class="catalog-item" data-product="franchi_affinity">
+        <img src="../img/franchi_affinity.jpg" alt="Franchi Affinity" class="catalog-img">
+        <p class="catalog-name">Franchi Affinity</p>
+      </div>
+      
+      <div class="catalog-item" data-product="franchi_intensity">
+        <img src="../img/franchi_intensity.jpg" alt="Franchi Intensity" class="catalog-img">
+        <p class="catalog-name">Franchi Intensity</p>
+      </div>
+    </div>
+
+    <!-- Stoeger Products -->
+    <div class="catalog-grid hidden" id="stoegerProducts">
+      <div class="catalog-item" data-product="stoeger_m3000">
+        <img src="../img/stoeger_m3000.jpg" alt="Stoeger M3000" class="catalog-img">
+        <p class="catalog-name">Stoeger M3000</p>
+      </div>
+      
+      <div class="catalog-item" data-product="stoeger_condor">
+        <img src="../img/stoeger_condor.jpg" alt="Stoeger Condor" class="catalog-img">
+        <p class="catalog-name">Stoeger Condor</p>
+      </div>
+    </div>
+
+    <!-- CYMA Products -->
+    <div class="catalog-grid hidden" id="cymaProducts">
+      <div class="catalog-item" data-product="cm097">
+        <img src="../images_ct/cm097airsoft.jpg" alt="CYMA CM097" class="catalog-img">
+        <p class="catalog-name">CYMA CM097</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cm057">
+        <img src="../images_ct/cm057.jpg" alt="CYMA CM057" class="catalog-img">
+        <p class="catalog-name">CYMA CM057</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cm093EM">
+        <img src="../images_ct/CM093EM.jpg" alt="CYMA CM093EM" class="catalog-img">
+        <p class="catalog-name">CYMA CM093EM</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cm093B">
+        <img src="../images_ct/CM093EM.jpg" alt="CYMA CM093B" class="catalog-img">
+        <p class="catalog-name">CYMA CM093B</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cm045A">
+        <img src="../images_ct/CM093EM.jpg" alt="CYMA CM045A" class="catalog-img">
+        <p class="catalog-name">CYMA CM045A</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cm040J">
+        <img src="../images_ct/CM093EM.jpg" alt="CYMA CM040J" class="catalog-img">
+        <p class="catalog-name">CYMA CM040J</p>
+      </div>
+      
+      <div class="catalog-item" data-product="cm077E">
+        <img src="../images_ct/CM093EM.jpg" alt="CYMA CM077E" class="catalog-img">
+        <p class="catalog-name">CYMA CM077E</p>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="nav-buttons">
+      <button class="back-to-main hidden" id="backToMain">
+        <span data-translate="back_to_categories">Əsas kateqoriyalara qayıt</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <!-- Sol tərəfdə əsas səhifə, əlaqə, haqqımızda, kataloq -->
+      <div class="footer-section footer-links">
+        <h3>Ovçu Dünyası</h3>
+        <ul>
+          <li><a href="../pages/index.html" data-translate="home_page">Əsas Səhifə</a></li>
+          <li><a href="../pages/contact.html" data-translate="contact">Əlaqə</a></li>
+          <li><a href="../pages/about.html" data-translate="about_us">Haqqımızda</a></li>
+          <li><a href="../pages/product.html" data-translate="catalog">Kataloq</a></li>
+        </ul>
+      </div>
+      
+      <!-- Mağaza məlumatları -->
+      <div class="footer-section footer-stores">
+        <!-- Birinci mağaza - Mətbuat 35 -->
+        <div class="store-info">
+          <h4>Mətbuat 35</h4>
+          <div class="store-details">
+            <p>Mətbuat prospekti 35, Bakı</p>
+            <p>Tel: +994 55 339 30 80</p>
+            <div class="store-social">
+              <a href="https://www.tiktok.com/@ovcudunyasii" target="_blank" title="TikTok">
+                <img src="../tiktok.svg" alt="TikTok" class="social-icon">
+              </a>
+              <a href="https://www.instagram.com/ovcudunyasii" target="_blank" title="Instagram">
+                <img src="../instagram.svg" alt="Instagram" class="social-icon">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- İkinci mağaza - Əkim Abbaszadə 12 -->
+      <div class="footer-section footer-stores">
+        <div class="store-info">
+          <h4>Akim Abbasov 12</h4>
+          <div class="store-details">
+            <p>Akim Abbasov 12</p>
+            <p>Tel: +994 55 230 30 80</p>
+            <div class="store-social">
+              <a href="https://www.tiktok.com/@ovcudunyasii" target="_blank" title="TikTok">
+                <img src="../tiktok.svg" alt="TikTok" class="social-icon">
+              </a>
+              <a href="https://www.instagram.com/ovcudunyasii" target="_blank" title="Instagram">
+                <img src="../instagram.svg" alt="Instagram" class="social-icon">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Üçüncü mağaza - Sumqayıt -->
+      <div class="footer-section footer-stores">
+        <div class="store-info">
+          <h4>Sumqayıt Filialı</h4>
+          <div class="store-details">
+            <p>H.Əliyev prospekti 21</p>
+            <p>Tel: +994 55 240 91 50</p>
+            <div class="store-social">
+              <a href="https://www.tiktok.com/@ovcudunyasii" target="_blank" title="TikTok">
+                <img src="../tiktok.svg" alt="TikTok" class="social-icon">
+              </a>
+              <a href="https://www.instagram.com/ovcudunyasii" target="_blank" title="Instagram">
+                <img src="../instagram.svg" alt="Instagram" class="social-icon">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p class="footer-copy" data-translate="copyright">© 2025 Ovçu Dünyası. Bütün hüquqlar qorunur.</p>
+    </div>
+  </footer>
+
+  <script src="../js/product.js"></script>
+</body>
+</html>
