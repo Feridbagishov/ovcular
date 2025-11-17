@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 working_hours: "Bazar ertəsi - Bazar / 09:00 - 18:00",
                 branch1_name: "Bakı Filialı",
                 branch1_address: "Bakı ş. Mətbuat pr-ti.35, Hayat Clinic",
-                branch2_name: "Gəncə Filialı",
+                branch2_name: "Bakı Filialı",
                 branch2_address: "Akim Abbasov 12",
                 branch3_name: "Sumqayıt Filialı",
                 branch3_address: "Sumqayıt ş., Mərkəzi küç. 12",
