@@ -130,63 +130,66 @@ document.addEventListener('DOMContentLoaded', function() {
                 about: "About Us",
                 catalog: "Catalog",
                 contact: "Contact",
-                title: "Hunter's World",
+                title: "EMAY Hunting",
                 airsoft: "Airsoft",
                 hunting_rifles: "Hunting Rifles",
                 psp_rifles: "PSP Rifles",
                 fishing_gear: "Fishing Gear",
                 home_page: "Home Page",
                 about_us: "About Us",
-                copyright: "© 2025 Hunter's World. All rights reserved.",
+                copyright: "© 2025 EMAY Hunting. All rights reserved.",
                 product_catalog: "Product Catalog",
                 contact_us: "Contact Us",
                 back_to_categories: "Back to Categories",
                 back_to_brands: "Back to Brands",
                 guns: "Guns",
                 pneumatic_guns: "Pneumatic Guns",
-                back_to_main: "Back to Main Categories"
+                back_to_main: "Back to Main Categories",
+                distributors_title: "Our Partner Companies"
             },
             ru: {
                 home: "Главная",
                 about: "О нас",
                 catalog: "Каталог",
                 contact: "Контакт",
-                title: "Мир Охотника",
+                title: "EMAY Hunting",
                 airsoft: "Аирсофт",
                 hunting_rifles: "Охотничьи ружья",
                 psp_rifles: "ПСП ружья",
                 fishing_gear: "Рыболовные снасти",
                 home_page: "Главная Страница",
                 about_us: "О нас",
-                copyright: "© 2025 Мир Охотника. Все права защищены.",
+                copyright: "© 2025 EMAY Hunting. Все права защищены.",
                 product_catalog: "Каталог продуктов",
                 contact_us: "Свяжитесь с нами",
                 back_to_categories: "Вернуться к категориям",
                 back_to_brands: "Вернуться к брендам",
                 guns: "Оружие",
                 pneumatic_guns: "Пневматическое оружие",
-                back_to_main: "Вернуться к основным категориям"
+                back_to_main: "Вернуться к основным категориям",
+                distributors_title: "Наши компании-партнеры"
             },
             az: {
                 home: "Əsas",
                 about: "Haqqımızda",
                 catalog: "Kataloq",
                 contact: "Əlaqə",
-                title: "Ovçu Dünyası",
+                title: "EMAY Hunting",
                 airsoft: "Airsoft",
                 hunting_rifles: "Ov Tüfəngləri",
                 psp_rifles: "PSP tüfəngləri",
                 fishing_gear: "Balıqçılıq ləvazimatları",
                 home_page: "Əsas Səhifə",
                 about_us: "Haqqımızda",
-                copyright: "© 2025 Ovçu Dünyası. Bütün hüquqlar qorunur.",
+                copyright: "© 2025 EMAY Hunting. Bütün hüquqlar qorunur.",
                 product_catalog: "Məhsul Kataloqu",
                 contact_us: "Əlaqə üçün",
                 back_to_categories: "Kateqoriyalara qayıt",
                 back_to_brands: "Markalara qayıt",
                 guns: "Silahlar",
                 pneumatic_guns: "Pnevmatik silahlar",
-                back_to_main: "Əsas kateqoriyalara qayıt"
+                back_to_main: "Əsas kateqoriyalara qayıt",
+                distributors_title: "Distribütoru Olduğumuz Şirkətlər"
             }
         };
 
@@ -220,6 +223,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update document title
             updateDocumentTitle(lang);
             
+            // Update distributors title (not using data-translate attribute)
+            updateDistributorsTitle(lang);
+            
             // Save preference
             localStorage.setItem('languagePreference', lang);
             
@@ -239,6 +245,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             document.title = title;
+        }
+
+        // Distributors title update function
+        function updateDistributorsTitle(lang) {
+            const distributorsTitle = document.querySelector('.distributors-title');
+            if (distributorsTitle && translations[lang].distributors_title) {
+                distributorsTitle.textContent = translations[lang].distributors_title;
+            }
         }
 
         function initLanguageEvents() {
@@ -263,6 +277,24 @@ document.addEventListener('DOMContentLoaded', function() {
         changeLanguage(savedLanguage);
         initLanguageEvents();
         console.log('Language system initialized');
+    }
+
+    // Kateqoriya keçid sistemi
+    function initCategoryNavigation() {
+        const categoryBoxes = document.querySelectorAll('.productBox[data-category]');
+        
+        categoryBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                console.log('Category clicked:', category);
+                
+                // Kateqoriyanı localStorage-də saxla
+                localStorage.setItem('selectedCategory', category);
+                
+                // Product səhifəsinə yönləndir
+                window.location.href = './product.html';
+            });
+        });
     }
 
     // Window resize handler
@@ -305,6 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
         handleMissingElements();
         initMobileMenu();
         initLanguageSystem();
+        initCategoryNavigation();
         initResizeHandler();
         console.log('All systems initialized successfully');
     } catch (error) {

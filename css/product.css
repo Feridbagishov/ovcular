@@ -40,7 +40,6 @@ nav {
   width: var(--logo-size);
   height: var(--logo-size);
   border-radius: var(--border-radius-circle);
-  border: 2px solid var(--color-accent);
   transition: transform var(--transition-fast);
 }
 
@@ -352,7 +351,7 @@ body.no-scroll {
 .catalog-item {
   width: 300px;
   height: 200px;
-  background: var(--color-primary);
+  background: var(--color-card-bg);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   display: flex;
@@ -365,9 +364,6 @@ body.no-scroll {
   cursor: pointer;
 }
 
-.catalog-item:hover {
-  transform: translateY(-5px);
-}
 
 .catalog-img {
   width: 100%;
@@ -420,6 +416,7 @@ body.no-scroll {
   justify-content: center;
   gap: var(--spacing-lg);
   margin-top: var(--spacing-3xl);
+  
 }
 
 .back-to-main {
@@ -435,6 +432,7 @@ body.no-scroll {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .back-to-main:hover {

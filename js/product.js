@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contact: "Contact",
         product_catalog: "Product Catalog",
         contact_us: "Contact Us",
-        copyright: "© 2025 Hunter's World. All rights reserved.",
+        copyright: "© 2025 EMAY Hunting. All rights reserved.",
         back_to_categories: "Back to Categories",
         back_to_brands: "Back to Brands",
         guns: "Guns",
@@ -141,7 +141,11 @@ document.addEventListener('DOMContentLoaded', function() {
         airsoft: "Airsoft",
         back_to_main: "Back to Main Categories",
         home_page: "Home Page",
-        about_us: "About Us"
+        about_us: "About Us",
+        title: "EMAY Hunting",
+        hunting_rifles: "Hunting Rifles",
+        psp_rifles: "PSP Rifles",
+        fishing_gear: "Fishing Gear"
       },
       ru: {
         home: "Главная",
@@ -150,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contact: "Контакт",
         product_catalog: "Каталог продуктов",
         contact_us: "Свяжитесь с нами",
-        copyright: "© 2025 Мир Охотника. Все права защищены.",
+        copyright: "© 2025 EMAY Hunting. Все права защищены.",
         back_to_categories: "Вернуться к категориям",
         back_to_brands: "Вернуться к брендам",
         guns: "Оружие",
@@ -158,7 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
         airsoft: "Аирсофт",
         back_to_main: "Вернуться к основным категориям",
         home_page: "Главная Страница",
-        about_us: "О нас"
+        about_us: "О нас",
+        title: "EMAY Hunting",
+        hunting_rifles: "Охотничьи ружья",
+        psp_rifles: "ПСП ружья",
+        fishing_gear: "Рыболовные снасти"
       },
       az: {
         home: "Əsas",
@@ -167,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contact: "Əlaqə",
         product_catalog: "Məhsul Kataloqu",
         contact_us: "Əlaqə üçün",
-        copyright: "© 2025 Ovçu Dünyası. Bütün hüquqlar qorunur.",
+        copyright: "© 2025 EMAY Hunting. Bütün hüquqlar qorunur.",
         back_to_categories: "Kateqoriyalara qayıt",
         back_to_brands: "Markalara qayıt",
         guns: "Silahlar",
@@ -175,7 +183,11 @@ document.addEventListener('DOMContentLoaded', function() {
         airsoft: "Airsoft",
         back_to_main: "Əsas kateqoriyalara qayıt",
         home_page: "Əsas Səhifə",
-        about_us: "Haqqımızda"
+        about_us: "Haqqımızda",
+        title: "EMAY Hunting",
+        hunting_rifles: "Ov Tüfəngləri",
+        psp_rifles: "PSP tüfəngləri",
+        fishing_gear: "Balıqçılıq ləvazimatları"
       }
     };
 
@@ -217,15 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateDocumentTitle(lang) {
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      let title = translations[lang].product_catalog + ' - ';
-      
-      if (lang === 'en') {
-        title += "Hunter's World";
-      } else if (lang === 'ru') {
-        title += "Мир Охотника";
-      } else {
-        title += "Ovçu Dünyası";
-      }
+      let title = translations[lang].product_catalog + ' - ' + translations[lang].title;
       
       document.title = title;
     }
@@ -254,8 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Language system initialized');
   }
 
-  // Catalog Navigation System
+  // Catalog Navigation System - BƏSİT VERSİYA
   function initCatalogNavigation() {
+    console.log('Initializing catalog navigation');
+    
     const mainCategories = document.getElementById('mainCategories');
     const gunsBrands = document.getElementById('gunsBrands');
     const pspProducts = document.getElementById('pspProducts');
@@ -263,174 +269,186 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToMain = document.getElementById('backToMain');
     const breadcrumb = document.querySelector('.breadcrumb');
 
-    // Navigation history stack
-    let navigationStack = [];
-
-    // Current navigation state
-    let currentState = {
-      category: null,
-      brand: null
-    };
+    // Yeni: Əgər index səhifəsindən seçilmiş kateqoriya varsa, onu yüklə
+    function loadSelectedCategoryFromIndex() {
+      const selectedCategory = localStorage.getItem('selectedCategory');
+      if (selectedCategory) {
+        console.log('Loading category from index page:', selectedCategory);
+        
+        // Əsas kateqoriyaları gizlət
+        if (mainCategories) {
+          mainCategories.classList.add('hidden');
+        }
+        
+        // Seçilmiş kateqoriyanı göstər
+        switch(selectedCategory) {
+          case 'guns':
+            if (gunsBrands) {
+              gunsBrands.classList.remove('hidden');
+              updateBreadcrumb('Silahlar');
+              backToMain.classList.remove('hidden');
+            }
+            break;
+          case 'psp':
+            if (pspProducts) {
+              pspProducts.classList.remove('hidden');
+              updateBreadcrumb('Pnevmatik Silahlar');
+              backToMain.classList.remove('hidden');
+            }
+            break;
+          case 'airsoft':
+            if (airsoftBrands) {
+              airsoftBrands.classList.remove('hidden');
+              updateBreadcrumb('Airsoft');
+              backToMain.classList.remove('hidden');
+            }
+            break;
+        }
+        
+        // localStorage-dan təmizlə
+        localStorage.removeItem('selectedCategory');
+      } else {
+        console.log('No category selected from index page');
+      }
+    }
 
     // Main category clicks
-    document.querySelectorAll('#mainCategories .catalog-item').forEach(item => {
-      item.addEventListener('click', function() {
-        const category = this.dataset.category;
-        selectCategory(category);
+    function initCategoryClicks() {
+      const categoryItems = document.querySelectorAll('#mainCategories .catalog-item');
+      
+      categoryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          console.log('Category selected:', category);
+          
+          hideAllSections();
+          
+          switch(category) {
+            case 'guns':
+              gunsBrands.classList.remove('hidden');
+              updateBreadcrumb('Silahlar');
+              break;
+            case 'psp':
+              pspProducts.classList.remove('hidden');
+              updateBreadcrumb('Pnevmatik Silahlar');
+              break;
+            case 'airsoft':
+              airsoftBrands.classList.remove('hidden');
+              updateBreadcrumb('Airsoft');
+              break;
+          }
+          
+          backToMain.classList.remove('hidden');
+        });
       });
-    });
+    }
 
     // Brand clicks
-    document.querySelectorAll('#gunsBrands .catalog-item, #airsoftBrands .catalog-item').forEach(item => {
-      item.addEventListener('click', function() {
-        const brand = this.dataset.brand;
-        selectBrand(brand);
+    function initBrandClicks() {
+      // Guns brands
+      const gunsBrandItems = document.querySelectorAll('#gunsBrands .catalog-item');
+      gunsBrandItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const brand = this.getAttribute('data-brand');
+          console.log('Brand selected:', brand);
+          
+          hideAllSections();
+          
+          // Find the product section for this brand
+          const productSection = document.getElementById(`${brand}Products`);
+          if (productSection) {
+            productSection.classList.remove('hidden');
+            updateBreadcrumb(this.querySelector('.catalog-name').textContent);
+          } else {
+            console.log(`No products found for brand: ${brand}`);
+            showMainCategories();
+          }
+        });
       });
-    });
-
-    // PSP Products clicks - birbaşa modellər
-    document.querySelectorAll('#pspProducts .catalog-item').forEach(item => {
-      item.addEventListener('click', function() {
-        const product = this.dataset.product;
-        selectProduct(product);
+      
+      // Airsoft brands
+      const airsoftBrandItems = document.querySelectorAll('#airsoftBrands .catalog-item');
+      airsoftBrandItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const brand = this.getAttribute('data-brand');
+          console.log('Airsoft brand selected:', brand);
+          
+          hideAllSections();
+          
+          // Find the product section for this brand
+          const productSection = document.getElementById(`${brand}Products`);
+          if (productSection) {
+            productSection.classList.remove('hidden');
+            updateBreadcrumb(this.querySelector('.catalog-name').textContent);
+          } else {
+            console.log(`No products found for brand: ${brand}`);
+            showMainCategories();
+          }
+        });
       });
-    });
+    }
 
-    // Back button - now goes back in navigation history
-    backToMain.addEventListener('click', function() {
-      goBack();
-    });
+    // PSP Product clicks
+    function initProductClicks() {
+      const pspProductItems = document.querySelectorAll('#pspProducts .catalog-item');
+      pspProductItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const product = this.getAttribute('data-product');
+          console.log('PSP product selected:', product);
+          // Burada məhsul detal səhifəsinə keçid edə bilərsiniz
+        });
+      });
+      
+      // Digər brand products klikləri
+      document.querySelectorAll('[id$="Products"] .catalog-item').forEach(item => {
+        if (!item.hasAttribute('data-click-bound')) {
+          item.setAttribute('data-click-bound', 'true');
+          item.addEventListener('click', function() {
+            const product = this.getAttribute('data-product');
+            console.log('Product selected:', product);
+            // Burada məhsul detal səhifəsinə keçid edə bilərsiniz
+          });
+        }
+      });
+    }
+
+    // Back button
+    function initBackButton() {
+      if (backToMain) {
+        backToMain.addEventListener('click', function() {
+          showMainCategories();
+        });
+      }
+    }
 
     function showMainCategories() {
       hideAllSections();
       mainCategories.classList.remove('hidden');
       backToMain.classList.add('hidden');
       updateBreadcrumb('Kataloq');
-      currentState.category = null;
-      currentState.brand = null;
-      navigationStack = []; // Reset navigation history
-    }
-
-    function selectCategory(category) {
-      // Save current state to history before changing
-      if (currentState.category || currentState.brand) {
-        navigationStack.push({...currentState});
-      }
-      
-      currentState.category = category;
-      currentState.brand = null;
-      
-      hideAllSections();
-      
-      switch(category) {
-        case 'guns':
-          gunsBrands.classList.remove('hidden');
-          updateBreadcrumb('Silahlar');
-          break;
-        case 'psp':
-          pspProducts.classList.remove('hidden');
-          updateBreadcrumb('Pnevmatik Silahlar');
-          break;
-        case 'airsoft':
-          airsoftBrands.classList.remove('hidden');
-          updateBreadcrumb('Airsoft');
-          break;
-      }
-      
-      backToMain.classList.remove('hidden');
-    }
-
-    function selectBrand(brand) {
-      // Save current state to history before changing
-      if (currentState.category || currentState.brand) {
-        navigationStack.push({...currentState});
-      }
-      
-      currentState.brand = brand;
-      
-      hideAllSections();
-      
-      // Find the product section for this brand
-      const productSection = document.getElementById(`${brand}Products`);
-      if (productSection) {
-        productSection.classList.remove('hidden');
-        updateBreadcrumb(document.querySelector(`[data-brand="${brand}"] .catalog-name`).textContent);
-      } else {
-        console.log(`No products found for brand: ${brand}`);
-        goBack();
-        return;
-      }
-      
-      backToMain.classList.remove('hidden');
-    }
-
-    function selectProduct(product) {
-      console.log(`Selected product: ${product}`);
-      // Burada məhsul səhifəsinə keçid edə bilərsiniz
-    }
-
-    function goBack() {
-      if (navigationStack.length > 0) {
-        const previousState = navigationStack.pop();
-        navigateToState(previousState);
-      } else {
-        showMainCategories();
-      }
-    }
-
-    function navigateToState(state) {
-      hideAllSections();
-      
-      if (state.brand) {
-        currentState.brand = state.brand;
-        const productSection = document.getElementById(`${state.brand}Products`);
-        if (productSection) {
-          productSection.classList.remove('hidden');
-          updateBreadcrumb(document.querySelector(`[data-brand="${state.brand}"] .catalog-name`).textContent);
-        }
-      } else if (state.category) {
-        currentState.category = state.category;
-        currentState.brand = null;
-        
-        switch(state.category) {
-          case 'guns':
-            gunsBrands.classList.remove('hidden');
-            updateBreadcrumb('Silahlar');
-            break;
-          case 'psp':
-            pspProducts.classList.remove('hidden');
-            updateBreadcrumb('Pnevmatik Silahlar');
-            break;
-          case 'airsoft':
-            airsoftBrands.classList.remove('hidden');
-            updateBreadcrumb('Airsoft');
-            break;
-        }
-      } else {
-        showMainCategories();
-        return;
-      }
-      
-      backToMain.classList.remove('hidden');
     }
 
     function hideAllSections() {
-      mainCategories.classList.add('hidden');
-      gunsBrands.classList.add('hidden');
-      pspProducts.classList.add('hidden');
-      airsoftBrands.classList.add('hidden');
-      
-      document.querySelectorAll('[id$="Products"]').forEach(section => {
+      // Bütün kataloq bölmələrini gizlət
+      const allCatalogSections = document.querySelectorAll('.catalog-grid');
+      allCatalogSections.forEach(section => {
         section.classList.add('hidden');
       });
     }
 
     function updateBreadcrumb(text) {
-      breadcrumb.innerHTML = `<span class="breadcrumb-item active">${text}</span>`;
+      if (breadcrumb) {
+        breadcrumb.innerHTML = `<span class="breadcrumb-item active">${text}</span>`;
+      }
     }
 
     // Initialize
-    showMainCategories();
+    loadSelectedCategoryFromIndex(); // Yeni: index səhifəsindən gələn kateqoriyanı yüklə
+    initCategoryClicks();
+    initBrandClicks();
+    initProductClicks();
+    initBackButton();
+    
     console.log('Catalog navigation initialized');
   }
 

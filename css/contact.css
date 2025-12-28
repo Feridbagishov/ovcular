@@ -39,7 +39,6 @@ nav {
   width: var(--logo-size);
   height: var(--logo-size);
   border-radius: var(--border-radius-circle);
-  border: 2px solid var(--color-accent);
   transition: transform var(--transition-fast);
 }
 
